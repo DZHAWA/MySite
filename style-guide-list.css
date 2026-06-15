@@ -1,0 +1,217 @@
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ И СБРОС СТИЛЕЙ БРАУЗЕРА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #1a0f0a;
+    color: #e0c9a6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Навигация (в тон твоему проекту) */
+nav {
+    background: #2d1b0e;
+    border-bottom: 3px solid #8b4513;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+nav a {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 15px;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+}
+nav a:hover {
+    background: #b8860b;
+    color: #1a0f0a;
+    border-color: #d4b483;
+}
+
+/* ==========================================================================
+   ДВУХКОЛОНОЧНЫЙ ИНТЕРФЕЙС
+   ========================================================================== */
+.content-wrapper {
+    max-width: 1000px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+    display: flex;
+    gap: 25px;
+    flex: 1;
+}
+
+/* Левая боковая панель (Меню) */
+.sidebar-menu {
+    flex: 1;
+    background: #2d1b0e;
+    border: 2px solid #8b4513;
+    padding: 20px;
+    border-radius: 4px;
+    height: fit-content;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    color: #b8860b;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #8b4513;
+    padding-bottom: 5px;
+}
+
+.sidebar-link {
+    display: block;
+    background: #5d2906;
+    border: 1px solid #8b4513;
+    color: #e0c9a6;
+    padding: 12px 15px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.sidebar-link:hover {
+    background: #6a3813;
+    color: #f4e4c1;
+    padding-left: 20px; /* Эффект сдвига при наведении */
+}
+
+/* Класс для активной кнопки (тот гайд, который сейчас открыт) */
+.sidebar-link.active {
+    background: #b8860b;
+    color: #1a0f0a;
+    border-color: #d4b483;
+    font-weight: bold;
+}
+
+.sidebar-back-btn {
+    display: block;
+    text-align: center;
+    background: #654321;
+    border: 1px solid #5d2906;
+    color: #f4e4c1;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.sidebar-back-btn:hover {
+    background: #7a5431;
+}
+
+/* ==========================================================================
+   ОБЛАСТЬ С ТЕКСТОМ СТАТЬИ
+   ========================================================================== */
+.text-area {
+    flex: 2.5;
+    background: #22140e;
+    border: 2px solid #8b4513;
+    padding: 35px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.article-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #8b4513;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.article-icon {
+    font-size: 2.5rem;
+}
+
+.article-title {
+    font-size: 2rem;
+    color: #b8860b;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* Стилизация текста гайда */
+.article-body {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f4e4c1;
+}
+
+.article-body p {
+    margin-bottom: 15px;
+}
+
+.article-body h3 {
+    color: #d4b483;
+    margin: 25px 0 10px 0;
+    font-size: 1.3rem;
+    border-left: 3px solid #b8860b;
+    padding-left: 10px;
+}
+
+.article-body ul, .article-body ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.article-body li {
+    margin-bottom: 8px;
+}
+
+/* Выделенный блок для важных формул */
+.info-block {
+    background: #2d1b0e;
+    border: 1px dashed #d4b483;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    color: #e0c9a6;
+}
+
+/* ==========================================================================
+   ПОДВАЛ
+   ========================================================================== */
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    margin-top: auto;
+}
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .sidebar-menu {
+        width: 100%;
+    }
+    .text-area {
+        width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,199 @@
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ И СБРОС БРАУЗЕРА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #1a0f0a; /* Твой фирменный темно-коричневый фон */
+    color: #e0c9a6;      /* Пергаментный цвет текста */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   ШАПКА (НАВИГАЦИЯ) — ЕДИНЫЙ СТИЛЬ
+   ========================================================================== */
+
+
+nav {
+    background: #2d1b0e;
+    border-bottom: 3px solid #8b4513;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+nav a {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 15px;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+}
+nav a:hover {
+    background: #6a3813;
+}
+nav a:hover {
+    background: #b8860b; /* Золото для активного элемента */
+    color: #1a0f0a;
+    border-color: #d4b483;
+}
+/* ==========================================================================
+   ОСНОВНОЙ КОНТЕЙНЕР ГЛАВНОГО МЕНЮ
+   ========================================================================== */
+.main-menu-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Эпичная зона заголовка */
+.title-area {
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3.5rem; /* Огромный заголовок */
+    color: #d4b483;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 20px rgba(139, 69, 19, 0.4);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.title-badge {
+    display: inline-block;
+    background: #8b4513;
+    color: #f4e4c1;
+    padding: 4px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 6px;
+    margin-top: 10px;
+    border: 1px solid #d4b483;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.killer-feature-text {
+    font-size: 1.1rem;
+    color: #a08566;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    font-style: italic;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Оболочка для кнопок меню */
+.menu-box {
+    width: 100%;
+    max-width: 500px;
+    background: #2d1b0e;
+    border: 3px solid #8b4513;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+
+/* Базовый стиль кнопок главного меню */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: transform 0.1s ease, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.menu-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+}
+
+/* ХОТ-ФИКСА ИЕРАРХИИ КНОПОК: */
+
+/* Кнопка 1: ИГРАТЬ (Самая яркая, золотая) */
+.btn-play {
+    background: #b8860b;
+    border: 2px solid #d4b483;
+    color: #1a0f0a; /* Темный читаемый текст */
+}
+
+.btn-play:hover {
+    background: #cd9b1d;
+    border-color: #f4e4c1;
+    box-shadow: 0 0 15px rgba(212, 180, 131, 0.4);
+}
+
+/* Кнопка 2: ГАЙДЫ (Приглушенная благородная деревянная текстура) */
+.btn-guides {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+}
+
+.btn-guides:hover {
+    background: #6a3813;
+    border-color: #d4b483;
+}
+
+/* Кнопка 3: ДРУЗЬЯ (Такая же, как гайды, для сохранения баланса) */
+.btn-friends {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+}
+
+.btn-friends:hover {
+    background: #6a3813;
+    border-color: #d4b483;
+}
+
+/* ==========================================================================
+   ПОДВАЛ (ФУТЕР) — ЕДИНЫЙ СТИЛЬ СДАТЬ_РАБОТУ
+   ========================================================================== */
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 4px;
+}

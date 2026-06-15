@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Друзья | DnD Online</title>
+    <link rel="stylesheet" href="style-friends.css">
+</head>
+<body>
+    <nav>
+        <a href="profile.html" class="active">ПРОФИЛЬ</a>
+        <a href="settings.html">НАСТРОЙКИ</a>
+        <a href="main-menu.html">ГЛАВНАЯ</a>
+    </nav>
+
+    <main class="friends-container">
+        <div class="section-title">
+            <h1 class="main-title">СПИСОК ДРУЗЕЙ</h1>
+            <p class="subtitle">Управляй своей партией и приглашай новых искателей приключений</p>
+        </div>
+
+        <div class="friends-grid">
+            
+            <section class="left-column">
+                
+                <div class="search-box">
+                    <input type="text" id="friendSearch" placeholder="Поиск по имени друга..." onkeyup="filterFriends()">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="friends-list" id="friendsList">
+                    
+                    <div class="friend-card status-ingame">
+                        <div class="avatar-area">
+                            <div class="avatar">🧙‍♂️</div>
+                            <span class="status-indicator"></span>
+                        </div>
+                        <div class="friend-info">
+                            <h3 class="friend-name">Элронд_99</h3>
+                            <p class="friend-status-text">В игре: «Подземелья Безумного Мага»</p>
+                        </div>
+                        <div class="friend-actions">
+                            <button class="action-btn join-btn" title="Присоединиться к игре">⚔️</button>
+                            <button class="action-btn message-btn" title="Написать сообщение">💬</button>
+                            <button class="action-btn remove-btn" title="Удалить из друзей">❌</button>
+                        </div>
+                    </div>
+
+                    <div class="friend-card status-online">
+                        <div class="avatar-area">
+                            <div class="avatar">🧝‍♀️</div>
+                            <span class="status-indicator"></span>
+                        </div>
+                        <div class="friend-info">
+                            <h3 class="friend-name">Лира_Ветрокрылая</h3>
+                            <p class="friend-status-text">В сети (в главном меню)</p>
+                        </div>
+                        <div class="friend-actions">
+                            <button class="action-btn invite-btn" title="Пригласить в лобби">➕</button>
+                            <button class="action-btn message-btn" title="Написать сообщение">💬</button>
+                            <button class="action-btn remove-btn" title="Удалить из друзей">❌</button>
+                        </div>
+                    </div>
+
+                    <div class="friend-card status-offline">
+                        <div class="avatar-area">
+                            <div class="avatar">🛡️</div>
+                            <span class="status-indicator"></span>
+                        </div>
+                        <div class="friend-info">
+                            <h3 class="friend-name">Торвальд_Борз</h3>
+                            <p class="friend-status-text">Был в сети вчера</p>
+                        </div>
+                        <div class="friend-actions">
+                            <button class="action-btn invite-btn" title="Пригласить в лобби">➕</button>
+                            <button class="action-btn message-btn" title="Оставить сообщение">💬</button>
+                            <button class="action-btn remove-btn" title="Удалить из друзей">❌</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="right-column">
+                
+                <div class="control-panel-box">
+                    <h3>ДОБАВИТЬ В ДРУЗЬЯ</h3>
+                    <p class="box-desc">Введите имя игрока:</p>
+                    <form class="add-friend-form" onsubmit="addFriendMock(event)">
+                        <input type="text" id="friendTag" placeholder="Имя" required>
+                        <button type="submit" class="submit-box-btn">ОТПРАВИТЬ ЗАПРОС</button>
+                    </form>
+                </div>
+
+                <div class="control-panel-box stats-box">
+                    <h3>ВАША ПАРТИЯ</h3>
+                    <div class="stat-line">
+                        <span>Всего друзей:</span>
+                        <span class="stat-val">3</span>
+                    </div>
+                    <div class="stat-line">
+                        <span>В игре прямо сейчас:</span>
+                        <span class="stat-val color-ingame">1</span>
+                    </div>
+                    <div class="stat-line">
+                        <span>Онлайн:</span>
+                        <span class="stat-val color-online">1</span>
+                    </div>
+                </div>
+
+                <a href="index.html" class="return-btn">НАЗАД В МЕНЮ</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>DUNGEONS & DRAGONS ONLINE © 2028</p>
+        <p>Собери свою идеальную команду для приключений</p>
+    </footer>
+
+    <script>
+        // Функция живого поиска по списку друзей
+        function filterFriends() {
+            const input = document.getElementById('friendSearch');
+            const filter = input.value.toLowerCase();
+            const list = document.getElementById('friendsList');
+            const cards = list.getElementsByClassName('friend-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const name = cards[i].getElementsByClassName('friend-name')[0];
+                if (name.innerText.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        // Демонстрация отправки запроса
+        function addFriendMock(event) {
+            event.preventDefault();
+            const tag = document.getElementById('friendTag').value;
+            alert('Запрос в друзья успешно отправлен игроку ' + tag + '!');
+            document.getElementById('friendTag').value = '';
+        }
+    </script>
+</body>
+</html>

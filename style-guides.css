@@ -1,0 +1,231 @@
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ И СБРОС БРАУЗЕРА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+ font-family: Georgia, serif;
+    background: #1a0f0a;
+    color: #e0c9a6;
+    padding: 10px;
+    min-height: 100vh;      
+    display: flex;          
+    flex-direction: column;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    flex: 1; 
+}
+/* ==========================================================================
+   ШАПКА (НАВИГАЦИЯ) — ЕДИНЫЙ СТИЛЬ GUI
+   ========================================================================== */
+nav {
+    background: #2d1b0e;
+    border-bottom: 3px solid #8b4513;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+nav a {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 15px;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+}
+nav a:hover {
+    background: #6a3813;
+}
+nav a:hover {
+    background: #b8860b; /* Золото для активного элемента */
+    color: #1a0f0a;
+    border-color: #d4b483;
+}
+
+/* ==========================================================================
+   ОСНОВНОЙ КОНТЕЙНЕР СТРАНИЦЫ
+   ========================================================================== */
+.guides-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Шапка страницы */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #8b4513;
+    padding-bottom: 20px;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    color: #b8860b; /* Золотой заголовок */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    font-size: 1.05rem;
+    color: #a08566;
+    line-height: 1.5;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   ТАБЛИЧНАЯ СЕТКА КАРТОЧЕК (ДВЕ В РЯД)
+   ========================================================================== */
+.guides-grid {
+    display: block;
+    width: 100%;
+}
+
+/* Используем блочную структуру со смещением для имитации колонок */
+.guide-card {
+    background: #2d1b0e; /* Деревянная подложка карточки */
+    border: 2px solid #8b4513;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2%;
+    min-height: 260px;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Убираем правый отступ у каждой второй карточки */
+.guide-card:nth-child(2n) {
+    margin-right: 0;
+}
+
+.guide-card:hover {
+    border-color: #d4b483;
+    transform: translateY(-2px);
+}
+
+/* Элементы карточки */
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #f4e4c1;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: #e0c9a6;
+    line-height: 1.4;
+    margin-bottom: 60px; /* Отступ для фиксации кнопки внизу */
+}
+
+/* Кнопка внутри карточки */
+.card-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    right: 25px;
+    background: #5d2906;
+    border: 1px solid #8b4513;
+    color: #f4e4c1;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.card-btn:hover {
+    background: #8b4513;
+    border-color: #d4b483;
+}
+
+/* ==========================================================================
+   КНОПКА ВОЗВРАТА (АКЦЕНТНАЯ)
+   ========================================================================== */
+.action-area {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.return-btn {
+    background: #654321;
+    border: 3px solid #5d2906;
+    color: #f4e4c1;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.return-btn:hover {
+    background: #7a5431;
+    border-color: #8b4513;
+}
+
+.return-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   ПОДВАЛ СТРАНИЦЫ
+   ========================================================================== */
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: auto;
+}
+
+/* Адаптивность под мобильные экраны */
+@media (max-width: 600px) {
+    .guide-card {
+        width: 100%;
+        margin-right: 0;
+        min-height: auto;
+    }
+    .card-desc {
+        margin-bottom: 20px;
+    }
+    .card-btn {
+        position: static;
+    }
+    nav a {
+        width: 90%;
+        margin: 5px 0;
+    }
+}

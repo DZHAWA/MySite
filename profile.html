@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль | DnD Online</title>
+    <link rel="stylesheet" href="style-profile.css">
+</head>
+<body>
+    <nav>
+         <a href="profile.html" class="active">ПРОФИЛЬ</a>
+        <a href="settings.html">НАСТРОЙКИ</a>
+        <a href="index.html">ГЛАВНАЯ</a>
+    </nav>
+
+    <main class="profile-container">
+        <div class="page-header">
+            <h1 class="page-title">⚙️ НАСТРОЙКИ ПРОФИЛЯ</h1>
+        </div>
+
+        <div class="profile-layout">
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <div class="avatar-frame">🛡️</div>
+                </div>
+                <h2 class="user-display-name">Gargor_Ironhelm</h2>
+                <div class="user-role">Статус: Игрок</div>
+                
+                <div class="info-block">
+                    <div class="info-item">
+                        <span class="info-label">Текущий логин:</span>
+                        <span class="info-value">gargor2026</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Эл. почта (Email):</span>
+                        <span class="info-value">gargor@dnd.ru</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">В таверне с:</span>
+                        <span class="info-value">12.06.2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <h3>Управление аккаунтом</h3>
+                <p class="actions-subtitle">Здесь вы можете обновить данные вашей учетной записи для безопасности или смены игрового имени.</p>
+                
+                <div class="buttons-stack">
+                    <button class="action-trigger-btn" onclick="alert('Модальное окно: Изменение отображаемого имени')">
+                        ✏️ Изменить отображаемое имя
+                    </button>
+                    
+                    <button class="action-trigger-btn" onclick="alert('Модальное окно: Изменение логина')">
+                        👤 Изменить логин аккаунта
+                    </button>
+                    
+                    <button class="action-trigger-btn" onclick="alert('Модальное окно: Смена пароля')">
+                        🔒 Сменить текущий пароль
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-area">
+            <a href="main-menu.html" class="return-btn">
+                ↩️ В ГЛАВНОЕ МЕНЮ
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>DUNGEONS & DRAGONS ONLINE © 2028</p>
+        <p>Все изменения личных данных требуют подтверждения текущей сессии безопасности.</p>
+    </footer>
+</body>
+</html>

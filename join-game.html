@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Присоединиться к игре</title>
+    <link rel="stylesheet" href="style-join.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+          <a href="profile.html" class="active">ПРОФИЛЬ</a>
+        <a href="settings.html">НАСТРОЙКИ</a>
+        <a href="index.html">ГЛАВНАЯ</a>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main>
+        <h1>ПРИСОЕДИНИТЬСЯ К ИГРЕ</h1>
+        
+        <div class="container">
+            <!-- Блок с играми -->
+            <div class="characters">
+                <!-- Панель 1 -->
+                <div class="saves-box-2">
+                    <h3>СОХРАНЕНИЕ 1</h3>
+                    <div class="placeholder" style="display: block; padding: 10px; overflow: hidden;">
+                        <div style="margin-bottom: 10px;">
+                            <span style="background: #8b4513; color: #f4e4c1; padding: 5px 10px; border-radius: 10px; font-size: 0.9rem;">
+                                СОХРАНЕНИЕ АКТИВНО
+                            </span>
+                        </div>
+                        <p style="color: #e0c9a6; line-height: 1.4; font-size: 0.95rem;">
+                            Прогресс: 83% | Игроков для сессии: 4<br>
+                            Сохранено 22.01.2028 
+                        </p>
+                        <button class="btn-join" onclick="alert('Присоединение к сохранению 1')">
+                            ПРИСОЕДИНИТЬСЯ
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Панель 2 -->
+                <div class="saves-box-2">
+                    <h3>СОХРАНЕНИЕ 2</h3>
+                    <div class="placeholder" style="display: block; padding: 10px; overflow: hidden;">
+                        <div style="margin-bottom: 10px;">
+                            <span style="background: #8b4513; color: #f4e4c1; padding: 5px 10px; border-radius: 10px; font-size: 0.9rem;">
+                                СОХРАНЕНИЕ АКТИВНО
+                            </span>
+                        </div>
+                        <p style="color: #e0c9a6; line-height: 1.4; font-size: 0.95rem;">
+                            Прогресс: 67% | Игроков для сессии: 3<br>
+                            Сохранено вчера
+                        </p>
+                        <button class="btn-join" onclick="alert('Присоединение к сохранению 2')">
+                            ПРИСОЕДИНИТЬСЯ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопка возврата -->
+        <a href="games-menu.html" class="return-btn">
+            ВЕРНУТЬСЯ К ВЫБОРУ ИГРЫ
+        </a>
+    </main>
+    
+    <!-- Подвал -->
+    <footer>
+        <p>Якубов Матвей Геннадьевич, группа 24290907/2091</p>
+        <p>DUNGEONS & DRAGONS ONLINE © 2028</p>
+        <p>Все сохранения защищены. Прогресс синхронизируется с облаком.</p>
+    </footer>
+</body>
+</html>

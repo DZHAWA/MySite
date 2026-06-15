@@ -1,0 +1,231 @@
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ И СБРОС СТИЛЕЙ БРАУЗЕРА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #1a0f0a; /* Твой фирменный темно-коричневый фон */
+    color: #e0c9a6;      /* Текстовый пергаментный цвет */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   ОСНОВНОЙ КОНТЕЙНЕР ФОРМЫ (КАРТОЧКА)
+   ========================================================================== */
+.container {
+    max-width: 450px;
+    width: 100%;
+    background: #2d1b0e; /* Цвет деревянной панели шапки */
+    border: 3px solid #8b4513; /* Коричневая рамка */
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+
+/* Шапка формы */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    color: #b8860b; /* Золотой цвет как у кнопки "Создать игру" */
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #d4b483;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   ЭЛЕМЕНТЫ ФОРМЫ (ПОЛЯ ВВОДА И ПОДСКАЗКИ)
+   ========================================================================== */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.95rem;
+    color: #f4e4c1;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Базовый стиль для текстовых полей */
+.input-field {
+    background: #1a0f0a;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 12px 15px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.input-field:focus {
+    border-color: #d4b483;
+    outline: none;
+    box-shadow: 0 0 8px rgba(212, 180, 131, 0.3);
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #a08566;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   УМНОЕ ПОЗИЦИОНИРОВАНИЕ КНОПКИ-ГЛАЗКА (UX)
+   ========================================================================== */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Делаем отступ справа в поле пароля, чтобы текст не залезал под глазок */
+.password-container .input-field {
+    padding-right: 45px;
+}
+
+/* Абсолютно позиционируем глазок внутри инпута */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #d4b483;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.toggle-password:hover {
+    color: #f4e4c1;
+    transform: scale(1.1);
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+/* ==========================================================================
+   ЧЕКБОКС И ССЫЛКИ
+   ========================================================================== */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #8b4513; /* Красивое выделение чекбокса в цвет проекта */
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 0.9rem;
+    color: #e0c9a6;
+    cursor: pointer;
+    user-select: none;
+}
+
+.link {
+    color: #d4b483;
+    text-decoration: none;
+    border-bottom: 1px dashed #d4b483;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.link:hover {
+    color: #f4e4c1;
+    border-bottom-style: solid;
+}
+
+/* ==========================================================================
+   КНОПКА ОТПРАВКИ ФОРМЫ (ИСПРАВЛЕННЫЙ BUTTON)
+   ========================================================================== */
+.btn.login-btn {
+    background: #b8860b; /* Фирменное яркое золото */
+    border: 2px solid #d4b483;
+    color: #1a0f0a; /* Темный текст на золотом фоне для читаемости */
+    padding: 14px;
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.btn.login-btn:hover {
+    background: #cd9b1d;
+    border-color: #f4e4c1;
+}
+
+.btn.login-btn:active {
+    transform: scale(0.98); /* Эффект нажатия кнопки */
+}
+
+/* Ссылка на регистрацию под формой */
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ПОДВАЛ ФОРМЫ
+   ========================================================================== */
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 4px;
+}

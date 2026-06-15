@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | DND ONLINE</title>
+    <link rel="stylesheet" href="style-register.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">DND ONLINE</h1>
+            <p class="subtitle">Создайте свой аккаунт</p>
+        </header>
+
+        <main class="register-form">
+            <form action="login.html" method="GET" class="form" id="registerForm" onsubmit="return validatePasswords(event)">
+                
+                <div class="form-group">
+                    <label for="login">Логин</label>
+                    <input 
+                        type="text" 
+                        id="login" 
+                        name="login" 
+                        placeholder="Придумайте логин" 
+                        required 
+                        class="input-field"
+                    >
+                    <div class="hint">Минимум 4 символа</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="type" 
+                        id="email" 
+                        name="email" 
+                        placeholder="example@domain.com" 
+                        required 
+                        class="input-field"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Придумайте пароль" 
+                            required 
+                            class="input-field"
+                        >
+                        <button type="button" class="toggle-password" id="togglePassBtn" onclick="togglePassword('password', 'togglePassBtn')" aria-label="Показать пароль">👁</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Повторите пароль</label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="confirm-password" 
+                            name="confirm-password" 
+                            placeholder="Повторите пароль" 
+                            required 
+                            class="input-field"
+                        >
+                        <button type="button" class="toggle-password" id="toggleConfirmPassBtn" onclick="togglePassword('confirm-password', 'toggleConfirmPassBtn')" aria-label="Показать повторный пароль">👁</button>
+                    </div>
+                    <span id="password-error">⚠️ Пароли не совпадают! Призовите магию внимательности.</span>
+                </div>
+
+                <div class="checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="terms" 
+                        name="terms" 
+                        required 
+                        class="checkbox"
+                    >
+                    <label for="terms" class="checkbox-label">
+                        Я согласен с <a href="#" class="link">правилами сервиса</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn register-btn">Создать аккаунт</button>
+            </form>
+
+            <div class="login-link">
+                <p>Уже есть аккаунт? <a href="login.html" class="link">Войти</a></p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>DUNGEONS & DRAGONS ONLINE © 2028</p>
+            <p>Все права защищены. Путешествие начинается здесь.</p>
+        </footer>
+    </div>
+
+    <script>
+    // 1. Универсальная функция для глазика (работает для обоих полей)
+    function togglePassword(inputId, buttonId) {
+        const input = document.getElementById(inputId);
+        const btn = document.getElementById(buttonId);
+        if (input.type === 'password') {
+            input.type = 'text';
+            btn.textContent = '🔒';
+        } else {
+            input.type = 'password';
+            btn.textContent = '👁';
+        }
+    }
+
+    // 2. Функция валидации совпадения паролей
+    function validatePasswords(event) {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        const errorSpan = document.getElementById('password-error');
+
+        if (password !== confirmPassword) {
+            event.preventDefault(); // Останавливаем отправку формы на сервер/следующую страницу
+            errorSpan.style.display = 'block'; // Показываем скрытую ошибку
+            document.getElementById('confirm-password').focus(); // Переносим фокус на поле ошибки
+            return false;
+        }
+
+        errorSpan.style.display = 'none'; // Если всё ок, скрываем ошибку
+        alert('Регистрация прошла успешно! Добро пожаловать в таверну.');
+        return true;
+    }
+    </script>
+</body>
+</html>

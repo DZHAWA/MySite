@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DND ONLINE</title>
+    <link rel="stylesheet" href="style-create.css">
+</head>
+<body>
+    <nav>
+   <a href="profile.html" class="active">ПРОФИЛЬ</a>
+        <a href="#">НАСТРОЙКИ</a>
+        <a href="#">ГЛАВНАЯ</a>
+    </nav>
+    
+    <main class="page">
+        <section class="card players">
+            <h2>Добавить игроков</h2>
+            <div class="card-content">
+                <h3>Недавние игроки (Друзья)</h3>
+                <div class="list">
+                    <div class="item">
+                        <span>🟢 Игрок 1</span>
+                        <button class="sm-btn" onclick="this.innerText='Отправлено'; this.disabled=true;">Пригласить</button>
+                    </div>
+                    <div class="item">
+                        <span>🟢 Игрок 2</span>
+                        <button class="sm-btn" onclick="this.innerText='Отправлено'; this.disabled=true;">Пригласить</button>
+                    </div>
+                    <div class="item">
+                        <span>⚫ Игрок 3</span>
+                        <button class="sm-btn" disabled>Офлайн</button>
+                    </div>
+                </div>
+                <a href="#" class="more">Больше →</a>
+            </div>
+        </section>
+
+        <section class="card mobs">
+            <h2>Выбор мобов</h2>
+            <div class="card-content">
+                <h3>Недавние мобы</h3>
+                <div class="list">
+                    <div class="item">
+                        <div class="mob-info">
+                            <span class="mob-name">Моб 1 (Гоблин)</span>
+                            <span class="badge easy">Легко</span>
+                        </div>
+                        <div class="counter">
+                            <button onclick="changeCount(this, -1)">-</button>
+                            <span class="count-num">0</span>
+                            <button onclick="changeCount(this, 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="mob-info">
+                            <span class="mob-name">Моб 2 (Орк)</span>
+                            <span class="badge medium">Средне</span>
+                        </div>
+                        <div class="counter">
+                            <button onclick="changeCount(this, -1)">-</button>
+                            <span class="count-num">0</span>
+                            <button onclick="changeCount(this, 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="mob-info">
+                            <span class="mob-name">Моб 3 (Дракон)</span>
+                            <span class="badge hard">Босс</span>
+                        </div>
+                        <div class="counter">
+                            <button onclick="changeCount(this, -1)">-</button>
+                            <span class="count-num">0</span>
+                            <button onclick="changeCount(this, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="more">Больше →</a>
+            </div>
+        </section>
+
+        <section class="card locations">
+            <h2>Выбор локации</h2>
+            <div class="location-slider">
+                <button class="arrow prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="arrow next" onclick="moveSlide(1)">&#10095;</button>
+                
+                <div class="slides" id="track">
+                    <div class="slide" style="background-image: url('location1.jpg');"><div class="label">Локация 1</div></div>
+                    <div class="slide" style="background-image: url('location2.jpg');"><div class="label">Локация 2</div></div>
+                    <div class="slide" style="background-image: url('location3.jpg');"><div class="label">Локация 3</div></div>
+                    <div class="slide" style="background-image: url('location4.png');"><div class="label">Локация 4</div></div>
+                    <div class="slide" style="background-image: url('location5.png');"><div class="label">Локация 5</div></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="actions">
+            <button class="btn create">Создать игру</button>
+            <a href="games-menu.html" class="btn back">Вернуться</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Якубов Матвей Геннадьевич, группа 24290907/2091</p>
+        <p>DUNGEONS & DRAGONS ONLINE © 2028</p>
+    </footer>
+
+<script>
+    // Слайдер (всего 5 слайдов, каждый занимает 20% от общей ширины трека)
+    let slideIndex = 0;
+    function moveSlide(n) {
+        slideIndex += n;
+        if (slideIndex > 4) slideIndex = 0; // Если ушли за правый край — возвращаемся к первому
+        if (slideIndex < 0) slideIndex = 4; // Если ушли за левый край — переходим к последнему
+        
+        // ИСПРАВЛЕНО: умножаем на 20%, а не на 100%
+        document.getElementById('track').style.transform = `translateX(-${slideIndex * 20}%)`;
+    }
+
+    // Счетчик мобов
+    function changeCount(btn, n) {
+        let numSpan = btn.parentElement.querySelector('.count-num');
+        let val = parseInt(numSpan.innerText) + n;
+        if (val >= 0) numSpan.innerText = val;
+    }
+</script>
+</body>
+</html>

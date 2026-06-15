@@ -1,0 +1,251 @@
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ И СБРОС БРАУЗЕРА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #1a0f0a; /* Фирменный темно-коричневый фон */
+    color: #e0c9a6;      /* Пергаментный текст */
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* ==========================================================================
+   НАВИГАЦИОННАЯ ПАНЕЛЬ (Сквозной стиль GUI)
+   ========================================================================== */
+nav {
+    background: #2d1b0e;
+    border-bottom: 3px solid #8b4513;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+nav a {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 15px;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background: #b8860b; /* Золото для активного элемента */
+    color: #1a0f0a;
+    border-color: #d4b483;
+}
+
+/* ==========================================================================
+   ОСНОВНОЙ КОНТЕЙНЕР И СЕТКА
+   ========================================================================== */
+.profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: #b8860b;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
+}
+
+/* Выравниваем обе колонки по высоте через Flexbox */
+.profile-layout {
+    display: flex;
+    gap: 20px;
+    align-items: stretch; /* Растягивает обе карточки на одинаковую высоту */
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+/* ОБЩИЙ СТИЛЬ ДЛЯ ОБЕИХ КАРТОЧЕК */
+.profile-card, .profile-actions {
+    background: #2d1b0e;
+    border: 3px solid #8b4513;
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    flex: 1; /* Делает колонки абсолютно равными по ширине */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ЛЕВАЯ КОЛОНКА (ПРОФИЛЬ) */
+.profile-card {
+    text-align: center;
+    align-items: center;
+}
+
+.avatar-container {
+    margin-bottom: 15px;
+}
+
+.avatar-frame {
+    width: 90px;
+    height: 90px;
+    background: #1a0f0a;
+    border: 3px solid #b8860b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.user-display-name {
+    font-size: 1.4rem;
+    color: #f4e4c1;
+    margin-bottom: 4px;
+}
+
+.user-role {
+    font-size: 0.95rem;
+    color: #a08566;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Список полей данных */
+.info-block {
+    background: #1a0f0a;
+    border: 1px solid #5d2906;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: left;
+    width: 100%;
+    flex-grow: 1; /* Заполняет оставшееся пространство */
+}
+
+.info-item {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-label {
+    color: #a08566;
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+}
+
+.info-value {
+    color: #f4e4c1;
+    font-weight: bold;
+}
+
+/* ПРАВАЯ КОЛОНКА (КНОПКИ) */
+.profile-actions h3 {
+    font-size: 1.25rem;
+    color: #b8860b;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.actions-subtitle {
+    font-size: 0.85rem;
+    color: #a08566;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Вертикальный стек кнопок */
+.buttons-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    flex-grow: 1; /* Центрирует кнопки по вертикали относительно левой карточки */
+}
+
+.action-trigger-btn {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 14px 15px;
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    width: 100%;
+}
+
+.action-trigger-btn:hover {
+    background: #b8860b;
+    color: #1a0f0a;
+    border-color: #f4e4c1;
+}
+
+/* ==========================================================================
+   КНОПКА ВОЗВРАТА И ФУТЕР
+   ========================================================================== */
+.action-area {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.return-btn {
+    background: #654321;
+    border: 3px solid #5d2906;
+    color: #f4e4c1;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background 0.2s;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.return-btn:hover {
+    background: #7a5431;
+    border-color: #8b4513;
+}
+
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Адаптивность */
+@media (max-width: 650px) {
+    .profile-layout {
+        flex-direction: column;
+    }
+}

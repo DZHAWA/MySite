@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #1a0f0a;
+    color: #e0c9a6;
+    padding: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: #2d1b0e;
+    border-bottom: 3px solid #8b4513;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+nav a {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 15px;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+}
+nav a:hover {
+    background: #6a3813;
+}
+nav a:hover {
+    background: #b8860b; /* Золото для активного элемента */
+    color: #1a0f0a;
+    border-color: #d4b483;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    flex: 1;
+}
+
+h1 {
+    color: #d4b483;
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.characters {
+    flex: 1;
+}
+
+.saves-box-2 {
+    background: #2d1b0e;
+    border: 3px solid #8b4513;
+    height: 250px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.saves-box-2 h3 {
+    color: #d4b483;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #8b4513;
+    padding-bottom: 5px;
+}
+
+.save-content {
+    height: 190px;
+    border: 2px dashed #8b4513;
+    padding: 10px;
+}
+
+.save-badge {
+    background: #8b4513;
+    color: #f4e4c1;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.save-info {
+    color: #e0c9a6;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.save-info p {
+    margin-bottom: 5px;
+}
+ .btn-load {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.btn-load:hover {
+    background: #6a3813;
+}
+
+.menu {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 48.5px;
+}
+
+.btn {
+    background: #5d2906;
+    border: 3px solid #8b4513;
+    color: #f4e4c1;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #6a3813;
+}
+
+.btn.create {
+    background: #b8860b;
+    border-color: #d4b483;
+    font-size: 1.2rem;
+    padding: 40px;
+}
+
+.return-btn {
+    background: #654321;
+    border: 3px solid #5d2906;
+    color: #f4e4c1;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block;
+}
+
+.return-btn:hover {
+    background: #7a5431;
+}
+
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 4px;
+}
+/* Общие свойства для обеих кнопок */
+.btn-load {
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+/* Специфичные стили для кнопки Загрузить */
+.btn-load {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+}
+
+.btn-load:hover {
+    background: #6a3813;
+    border-color: #d4b483;
+}
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    .saves-box-2 {
+        height: 180px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #1a0f0a;
+    color: #e0c9a6;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Навигация */
+nav {
+    background: #2d1b0e;
+    border-bottom: 3px solid #8b4513;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+nav a {
+    background: #5d2906;
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 8px 15px;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+}
+nav a:hover {
+    background: #6a3813;
+}
+nav a:hover {
+    background: #b8860b; /* Золото для активного элемента */
+    color: #1a0f0a;
+    border-color: #d4b483;
+}
+
+/* Исправленный класс для активной вкладки (вместо дублирующего hover) */
+
+
+/* Основное содержимое */
+main {
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #d4b483;
+    text-align: center;
+    margin: 20px 0 35px 0;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    /* Эффект объемного свечения для заголовка */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 180, 131, 0.3);
+}
+
+/* Контейнер */
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    flex: 1;
+}
+
+/* Персонажи (сохранены и улучшены для совместимости с другими страницами) */
+.characters {
+    flex: 1;
+}
+
+.character-box {
+    background: #2d1b0e;
+    border: 3px solid #8b4513;
+    height: 200px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+}
+
+.character-box h3 {
+    color: #d4b483;
+    text-align: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #8b4513;
+    padding-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.placeholder {
+    height: 130px;
+    border: 2px dashed #8b4513;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.placeholder:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.add-btn {
+    width: 45px;
+    height: 45px;
+    background: #8b4513;
+    color: #d4b483;
+    border: 2px solid #d4b483;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background: #b8860b;
+    color: #1a0f0a;
+    transform: scale(1.1) rotate(90deg); /* Плавный поворот плюсика при наведении */
+}
+
+/* Меню */
+.menu {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Ушли от магического 48.5px к гибкому и красивому отступу */
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Кнопки меню */
+.btn {
+    /* Градиент под благородное темное дерево */
+    background: linear-gradient(135deg, #5d2906, #411d04);
+    border: 3px solid #8b4513;
+    color: #f4e4c1;
+    padding: 25px 40px; /* Сбалансированные пропорции вместо огромных 40px */
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    /* Тень для создания 3D-объема и внутреннее свечение */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #6a3813, #4e2507);
+    border-color: #d4b483;
+    color: #fff;
+    transform: translateY(-2px); /* Интерактивный микро-подъем кнопки */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 0 10px rgba(212, 180, 131, 0.2);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Особая золотая кнопка "СОЗДАТЬ ИГРУ" */
+.btn.create {
+    background: linear-gradient(135deg, #b8860b, #916a08);
+    border-color: #d4b483;
+    color: #1a0f0a;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.btn.create:hover {
+    background: linear-gradient(135deg, #cba122, #a67b0a);
+    border-color: #f4e4c1;
+    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4), 0 0 12px rgba(244, 228, 193, 0.3);
+}
+
+/* Кнопка возврата */
+.action-area {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.return-btn {
+    background: linear-gradient(135deg, #654321, #4a3016);
+    border: 3px solid #5d2906;
+    color: #f4e4c1;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.return-btn:hover {
+    background: linear-gradient(135deg, #7a5431, #5d3f22);
+    border-color: #8b4513;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.return-btn:active {
+    transform: scale(0.98);
+}
+
+/* Подвал */
+footer {
+    background: #2d1b0e;
+    border-top: 3px solid #8b4513;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a08566;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+}
+
+footer p {
+    margin-bottom: 4px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .character-box {
+        height: 180px;
+        width: 100%;
+    }
+    
+    .menu {
+        width: 100%;
+    }
+    
+    .btn {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+}

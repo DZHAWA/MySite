@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | DND ONLINE</title>
+    <link rel="stylesheet" href="style-login.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">DND ONLINE</h1>
+            <p class="subtitle">Войдите в свой аккаунт</p>
+        </header>
+
+        <main class="login-form">
+            <form action="games-menu.html" method="GET" class="form" id="loginForm">
+                <div class="form-group">
+                    <label for="login">Логин или Email</label>
+                    <input 
+                        type="text" 
+                        id="login" 
+                        name="login" 
+                        placeholder="Введите ваш логин или email" 
+                        required
+                        class="input-field"
+                    >
+                    <div class="hint">Используйте ваш логин или email, указанный при регистрации</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Введите пароль" 
+                            required
+                            class="input-field"
+                        >
+                        <button type="button" class="toggle-password" id="togglePasswordBtn" onclick="togglePasswordVisibility()" aria-label="Показать пароль">👁</button>
+                    </div>
+                    <div class="hint">
+                        <a href="#" class="link forgot-password">Забыли пароль?</a>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="remember" 
+                        name="remember" 
+                        class="checkbox"
+                    >
+                    <label for="remember" class="checkbox-label">
+                        Запомнить меня
+                    </label>
+                </div>
+
+                <button type="submit" class="btn login-btn">Войти в аккаунт</button>
+            </form>
+
+            <div class="register-link">
+                <p>Нет аккаунта? <a href="register.html" class="link register-link-text">Создать</a></p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>DUNGEONS & DRAGONS ONLINE © 2028</p>
+            <p>Приключения ждут! Войдите в мир магии и героев</p>
+        </footer>
+    </div>
+
+    <script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const toggleBtn = document.getElementById('togglePasswordBtn');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleBtn.textContent = '🔒'; // Иконка меняется на закрытый замок, когда пароль открыт
+        } else {
+            passwordInput.type = 'password';
+            toggleBtn.textContent = '👁';
+        }
+    }
+    </script>
+</body>
+</html>
